@@ -1,16 +1,16 @@
 project "FreeType"
 	kind "SharedLib"
-	language "C++"
+	language "C"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	files
 	{
+        "include/ft2build.h",
         "include/**.h"
 	}
-
-    includedirs{
-        "include/"
+    libdirs{
+        "win64"
     }
 
 	filter "system:windows"
